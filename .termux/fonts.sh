@@ -3,7 +3,7 @@ DIR=`cd $(dirname $0) && pwd`
 FONTS_DIR=$DIR/fonts
 count=0
 
-echo -e "The default font is Ubuntu font.\nYou can choose another one from list below.";
+echo -e "Шрифт по умолчанию - шрифт Ubuntu.\nВы можете выбрать другой из списка ниже.";
 
 for font in $FONTS_DIR/*/{*.ttf,*.otf}; do
 	font_file[count]=$font;
@@ -13,17 +13,17 @@ done;
 count=$(( $count - 1 ));
 
 while true; do
-	read -p 'Enter a number, leave blank to not to change:' number;
+	read -p 'Введите номер, оставьте поле пустым, чтобы не менять:' number;
 
 	if [[ -z "$number" ]]; then
 		break;
 	elif ! [[ $number =~ ^[0-9]+$ ]]; then
-		echo "Please enter the right number.";
+		echo "Пожалуйста, введите правильный номер!";
 	elif (( $number >= 0 && $number <= $count )); then
 		cp -fr "${font_file[number]}" "$DIR/font.ttf";
 		break;
 	else
-		echo "Please enter the right number.";
+		echo "Пожалуйста, введите правильный номер!";
 	fi
 done;
 
