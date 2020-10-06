@@ -13,7 +13,7 @@ done;
 count=$(( $count - 1 ));
 
 while true; do
-  read -p 'Введите номер, оставьте поле пустым, чтобы не менять:' number;
+  read -p 'Введите номер,оставьте поле пустым,чтобы не менять:' number;
   if [[ -z "$number" ]]; then
     break;
   elif ! [[ $number =~ ^[0-9]+$ ]]; then
