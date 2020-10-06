@@ -3,7 +3,7 @@ termux-setup-storage
 
 apt update
 apt install -y git zsh
-git clone https://github.com/Cabbagec/termux-ohmyzsh.git "$HOME/termux-ohmyzsh" --depth 1
+git clone https://github.com/EllVEBIT/termux-ohmyzsh.git "$HOME/termux-ohmyzsh" --depth 1
 
 mv "$HOME/.termux" "$HOME/.termux.bak.$(date +%Y.%m.%d-%H:%M:%S)"
 cp -R "$HOME/termux-ohmyzsh/.termux" "$HOME/.termux"
@@ -21,12 +21,12 @@ echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HO
 
 chsh -s zsh
 
-echo "oh-my-zsh install complete!\nChoose your color scheme now~"
+echo "Установка завершена!\nВыберите цветовую схему"
 $HOME/.termux/colors.sh
 
-echo "Choose your font now~"
+echo "Выберите шрифт"
 $HOME/.termux/fonts.sh
 
-echo "Please restart Termux app..."
+echo "Пожалуйста перезапустите termux"
 
 exit
